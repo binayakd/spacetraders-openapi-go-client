@@ -21,16 +21,16 @@ type SystemType string
 
 // List of SystemType
 const (
-	NEUTRON_STAR SystemType = "NEUTRON_STAR"
-	RED_STAR SystemType = "RED_STAR"
-	ORANGE_STAR SystemType = "ORANGE_STAR"
-	BLUE_STAR SystemType = "BLUE_STAR"
-	YOUNG_STAR SystemType = "YOUNG_STAR"
-	WHITE_DWARF SystemType = "WHITE_DWARF"
-	BLACK_HOLE SystemType = "BLACK_HOLE"
-	HYPERGIANT SystemType = "HYPERGIANT"
-	NEBULA SystemType = "NEBULA"
-	UNSTABLE SystemType = "UNSTABLE"
+	SYSTEM_NEUTRON_STAR SystemType = "NEUTRON_STAR"
+	SYSTEM_RED_STAR SystemType = "RED_STAR"
+	SYSTEM_ORANGE_STAR SystemType = "ORANGE_STAR"
+	SYSTEM_BLUE_STAR SystemType = "BLUE_STAR"
+	SYSTEM_YOUNG_STAR SystemType = "YOUNG_STAR"
+	SYSTEM_WHITE_DWARF SystemType = "WHITE_DWARF"
+	SYSTEM_BLACK_HOLE SystemType = "BLACK_HOLE"
+	SYSTEM_HYPERGIANT SystemType = "HYPERGIANT"
+	SYSTEM_NEBULA SystemType = "NEBULA"
+	SYSTEM_UNSTABLE SystemType = "UNSTABLE"
 )
 
 // All allowed values of SystemType enum
