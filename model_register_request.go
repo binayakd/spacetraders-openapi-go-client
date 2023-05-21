@@ -24,6 +24,8 @@ type RegisterRequest struct {
 	Faction string `json:"faction"`
 	// How other agents will see your ships and information.
 	Symbol string `json:"symbol"`
+	// Your email address. This is used if you reserved your call sign between resets.
+	Email *string `json:"email,omitempty"`
 }
 
 // NewRegisterRequest instantiates a new RegisterRequest object
@@ -93,6 +95,38 @@ func (o *RegisterRequest) SetSymbol(v string) {
 	o.Symbol = v
 }
 
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *RegisterRequest) GetEmail() string {
+	if o == nil || IsNil(o.Email) {
+		var ret string
+		return ret
+	}
+	return *o.Email
+}
+
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RegisterRequest) GetEmailOk() (*string, bool) {
+	if o == nil || IsNil(o.Email) {
+		return nil, false
+	}
+	return o.Email, true
+}
+
+// HasEmail returns a boolean if a field has been set.
+func (o *RegisterRequest) HasEmail() bool {
+	if o != nil && !IsNil(o.Email) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmail gets a reference to the given string and assigns it to the Email field.
+func (o *RegisterRequest) SetEmail(v string) {
+	o.Email = &v
+}
+
 func (o RegisterRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -105,6 +139,9 @@ func (o RegisterRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["faction"] = o.Faction
 	toSerialize["symbol"] = o.Symbol
+	if !IsNil(o.Email) {
+		toSerialize["email"] = o.Email
+	}
 	return toSerialize, nil
 }
 
